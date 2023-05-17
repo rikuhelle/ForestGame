@@ -15,9 +15,11 @@ public class TerrainGenerator : MonoBehaviour {
     MeshFilter meshFilter;
     MeshRenderer meshRenderer;
     Material material;
+    MeshCollider meshCollider;
 
-    private void Start() {
-
+    private void Start()
+    {
+        meshCollider = gameObject.AddComponent<MeshCollider>();
         meshRenderer = gameObject.AddComponent<MeshRenderer>();
         meshFilter = gameObject.AddComponent<MeshFilter>();
         material = new Material(Shader.Find("Standard"));
@@ -99,6 +101,8 @@ public class TerrainGenerator : MonoBehaviour {
         // Finish off the mesh and set our meshFilter to use it.
         mesh.RecalculateNormals();
         meshFilter.mesh = mesh;
+
+        meshCollider.sharedMesh = mesh;
 
         // Create a simple texture. It's only one colour so it doesn't need to be bigger than 1x1.
         Texture2D texture = new Texture2D(1, 1);
