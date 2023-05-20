@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -252,18 +252,14 @@ MonoBehaviour:
   elementSpacing: 3
   elements:
   - name: Trees
-    density: 3
+    density: 2
     prefabs:
     - {fileID: 228648737351683733, guid: fa4ac769b79f30847b6d338eb58ce8aa, type: 3}
-    - {fileID: 6319998812547932785, guid: 9d075256d1e434144ab37e1ae02b44a4, type: 3}
+    - {fileID: 3918100190736840487, guid: 146facae85c525e4f95fd5c590041f8c, type: 3}
   - name: Rocks
-    density: 6
+    density: 1
     prefabs:
-    - {fileID: 7405846476849542632, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
-    - {fileID: 5202732821079448320, guid: cebfacc247a640945a2c30b442202fca, type: 3}
-    - {fileID: 4680757731160225450, guid: 0fde05fa0f3321942a21896ff4f0856f, type: 3}
-    - {fileID: 8783306491908617939, guid: f02116c209ecd9e488fc4d2cd8996133, type: 3}
-    - {fileID: 1576488453971893466, guid: a778b631c6253a04899cb31bad047c81, type: 3}
+    - {fileID: 8523984565304441964, guid: b812bd435bfe0c44ea6e31e21827a2f0, type: 3}
   - name: Other
     density: 10
     prefabs:
