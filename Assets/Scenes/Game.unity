@@ -254,12 +254,13 @@ MonoBehaviour:
   - name: Trees
     density: 2
     prefabs:
-    - {fileID: 228648737351683733, guid: fa4ac769b79f30847b6d338eb58ce8aa, type: 3}
-    - {fileID: 3918100190736840487, guid: 146facae85c525e4f95fd5c590041f8c, type: 3}
+    - {fileID: 1458295244183366047, guid: f71ad564bc9c13149bc8fcc258672fa5, type: 3}
+    - {fileID: 5709899741319639150, guid: 7a9752f535e62d743822648563f07d5f, type: 3}
+    - {fileID: 7410006984680976078, guid: 6679fc17fdafbd3478d597f424744e46, type: 3}
   - name: Rocks
     density: 1
     prefabs:
-    - {fileID: 8523984565304441964, guid: b812bd435bfe0c44ea6e31e21827a2f0, type: 3}
+    - {fileID: 8984757005396899301, guid: b01cce2981b1497489bf8de43420bc13, type: 3}
   - name: Other
     density: 10
     prefabs:
