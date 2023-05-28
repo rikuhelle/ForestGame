@@ -14,7 +14,7 @@ public class TerrainGenerator : MonoBehaviour {
 
     MeshFilter meshFilter;
     MeshRenderer meshRenderer;
-    Material material;
+    public Material material;
     MeshCollider meshCollider;
 
     private void Start()
@@ -22,7 +22,7 @@ public class TerrainGenerator : MonoBehaviour {
         meshCollider = gameObject.AddComponent<MeshCollider>();
         meshRenderer = gameObject.AddComponent<MeshRenderer>();
         meshFilter = gameObject.AddComponent<MeshFilter>();
-        material = new Material(Shader.Find("Standard"));
+        //material = new Material(Shader.Find("Standard"));
 
         // Validation check to ensure terrainSize is not smaller than forestSize, as this will create an indexOutOfBounds exception.
         if (terrainSize < Forest.forestSize)
@@ -71,7 +71,7 @@ public class TerrainGenerator : MonoBehaviour {
             for (int z = 0; z < terrainSize; z++) {
 
                 vertices[vertIndex] = new Vector3(x, heightMap[x, z], z);
-                uvs[vertIndex] = new Vector2((float)(x / terrainSize), (float)(z / terrainSize));
+                uvs[vertIndex] = new Vector2((float)x / terrainSize, (float)z / terrainSize);
 
                 // Make sure we're not on the last row/column of the mesh as setting a triangle from there would create an indexOutOfBoundsException.
                 if (x < terrainSize - 1 && z < terrainSize - 1) {
@@ -105,12 +105,12 @@ public class TerrainGenerator : MonoBehaviour {
         meshCollider.sharedMesh = mesh;
 
         // Create a simple texture. It's only one colour so it doesn't need to be bigger than 1x1.
-        Texture2D texture = new Texture2D(1, 1);
-        texture.SetPixel(0, 0, Color.green);
-        texture.Apply();
+        //Texture2D texture = new Texture2D(1, 1);
+        //texture.SetPixel(0, 0, Color.green);
+        //texture.Apply();
 
         // Apply the texture to our material and apply the material to our MeshRenderer.
-        material.mainTexture = texture;
+        //material.mainTexture = texture;
         meshRenderer.material = material;
 
     }
