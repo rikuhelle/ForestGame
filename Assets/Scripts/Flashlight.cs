@@ -7,7 +7,9 @@ public class Flashlight : MonoBehaviour
 
     public bool onToggle = false;
     public GameObject lightSource;
-    public AudioSource clickSound;
+    public AudioSource sound;
+    public AudioClip clickSoundOn;
+    public AudioClip clickSoundOff;
 
     // Update is called once per frame
     void Update()
@@ -16,6 +18,14 @@ public class Flashlight : MonoBehaviour
         {
             onToggle = !onToggle;
             lightSource.SetActive(onToggle);
+            if (onToggle)
+            {
+                sound.PlayOneShot(clickSoundOn);
+            }
+            else
+            {
+                sound.PlayOneShot(clickSoundOff);
+            }
         } 
     }
 }

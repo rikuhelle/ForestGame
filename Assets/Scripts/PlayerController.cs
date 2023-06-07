@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool canMove = true;
 
+    public AudioSource sound;
+    public AudioClip walkSound;
+    bool playerWalkSoundCreated = false;
+
     void Start()
     {
         characterController = GetComponent<CharacterController>();
@@ -41,6 +45,22 @@ public class PlayerController : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+
+        bool isMoving = curSpeedX != 0 || curSpeedY != 0;
+        
+        if (isMoving && characterController.isGrounded)
+        {
+            if (!playerWalkSoundCreated)
+            {
+                sound.Play();
+                playerWalkSoundCreated = true;
+            }
+        }
+        else
+        {
+            sound.Stop();
+            playerWalkSoundCreated = false;
+        }
 
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded)
         {
